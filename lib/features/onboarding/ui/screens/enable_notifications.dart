@@ -14,6 +14,8 @@ class EnableNotificationsScreen extends StatefulWidget {
 }
 
 class _EnableNotificationsScreenState extends State<EnableNotificationsScreen> {
+  bool value = false;
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
@@ -77,7 +79,7 @@ class _EnableNotificationsScreenState extends State<EnableNotificationsScreen> {
               margin: EdgeInsets.only(left: 24.w, right: 24.w),
               padding: EdgeInsets.all(24.r),
               decoration: BoxDecoration(
-                color: Color(0xFFF8F8F9),
+                color: const Color(0xFFF8F8F9),
                 borderRadius: BorderRadius.circular(12.r),
               ),
               child: Row(
@@ -95,8 +97,13 @@ class _EnableNotificationsScreenState extends State<EnableNotificationsScreen> {
                   SizedBox(
                     height: 12.h,
                     child: Switch.adaptive(
-                      value: false,
-                      onChanged: (value) {},
+                      activeColor: AppColors.primaryColor,
+                      value: value,
+                      onChanged: (val) {
+                        setState(() {
+                          value = val;
+                        });
+                      },
                     ),
                   ),
                 ],

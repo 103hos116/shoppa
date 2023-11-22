@@ -62,25 +62,48 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   itemBuilder: (context, index) {
                     return Column(
                       children: [
-                        Image.asset(contents[index].image),
-                        SizedBox(height: 72.h),
-                        Text(
-                          contents[index].title,
-                          textAlign: TextAlign.center,
-                          style: AppTextStyle.medium(
-                            color: Colors.black,
-                            fontSize: 30.sp,
+                        if (index.isEven) ...[
+                          Image.asset(contents[index].image),
+                          SizedBox(height: 72.h),
+                          Text(
+                            contents[index].title,
+                            textAlign: TextAlign.center,
+                            style: AppTextStyle.medium(
+                              color: Colors.black,
+                              fontSize: 30.sp,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 16.h),
-                        Text(
-                          contents[index].desc,
-                          textAlign: TextAlign.center,
-                          style: AppTextStyle.regular(
-                            color: const Color(0xFF999999),
-                            fontSize: 13.sp,
+                          SizedBox(height: 16.h),
+                          Text(
+                            contents[index].desc,
+                            textAlign: TextAlign.center,
+                            style: AppTextStyle.regular(
+                              color: const Color(0xFF999999),
+                              fontSize: 13.sp,
+                            ),
                           ),
-                        ),
+                        ],
+                        if (index.isOdd) ...[
+                          Text(
+                            contents[index].title,
+                            textAlign: TextAlign.center,
+                            style: AppTextStyle.medium(
+                              color: Colors.black,
+                              fontSize: 30.sp,
+                            ),
+                          ),
+                          SizedBox(height: 16.h),
+                          Text(
+                            contents[index].desc,
+                            textAlign: TextAlign.center,
+                            style: AppTextStyle.regular(
+                              color: const Color(0xFF999999),
+                              fontSize: 13.sp,
+                            ),
+                          ),
+                          SizedBox(height: 72.h),
+                          Image.asset(contents[index].image),
+                        ],
                       ],
                     );
                   },

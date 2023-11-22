@@ -15,6 +15,9 @@ class SelectPreferredLanguageScreen extends StatefulWidget {
 
 class _SelectPreferredLanguageScreenState
     extends State<SelectPreferredLanguageScreen> {
+  ValueNotifier<bool> checkValue = ValueNotifier(false);
+  int selectedLanguageIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
@@ -42,9 +45,9 @@ class _SelectPreferredLanguageScreenState
               ),
             ),
             SizedBox(height: 72.h),
-            languageWidget('English', 'assets/english.svg', true),
+            languageWidget('English', 'assets/english.svg', 0),
             SizedBox(height: 8.h),
-            languageWidget('Français', 'assets/french.svg', false),
+            languageWidget('Français', 'assets/french.svg', 1),
             SizedBox(height: size.height * 0.4),
             ElevatedButton(
               onPressed: () {},
@@ -69,21 +72,28 @@ class _SelectPreferredLanguageScreenState
     );
   }
 
-  Widget languageWidget(String title, String assetUrl, bool value) {
+  Widget languageWidget(
+    String title,
+    String assetUrl,
+    int index,
+  ) {
     return InkWell(
       onTap: () {
         setState(() {
-          value = !value;
+          // checkValue.value = !checkValue.value;
+          selectedLanguageIndex = index;
         });
       },
       child: Container(
         padding: EdgeInsets.all(16.r),
         decoration: BoxDecoration(
-          color: value == true ? AppColors.primaryColor : Colors.white,
+          color: selectedLanguageIndex == index
+              ? AppColors.primaryColor
+              : Colors.white,
           borderRadius: BorderRadius.circular(12.r),
           border: Border.all(
             width: 1.5,
-            color: value == true
+            color: selectedLanguageIndex == index
                 ? AppColors.primaryColor
                 : const Color(0xFFF1F0F3),
           ),
@@ -96,16 +106,31 @@ class _SelectPreferredLanguageScreenState
               title,
               style: AppTextStyle.medium(
                 fontSize: 14.sp,
-                color: value == true ? Colors.white : Colors.black,
+                color: selectedLanguageIndex == index
+                    ? Colors.white
+                    : Colors.black,
               ),
             ),
             const Spacer(),
-            value == true
-                ? Icon(
+            // SizedBox(
+            //   height: 10.h,
+            //   width: 20.w,
+            //   child: Checkbox(
+            //     value: value,
+            //     shape: const CircleBorder(),
+            //     onChanged: (val) {
+            //       setState(() {
+            //         value = val!;
+            //       });
+            //     },
+            //   ),
+            // ),
+            selectedLanguageIndex == index
+                ? const Icon(
                     Icons.check_circle,
                     color: Colors.white,
                   )
-                : Offstage(),
+                : const Offstage(),
           ],
         ),
       ),
