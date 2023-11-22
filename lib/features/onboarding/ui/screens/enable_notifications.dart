@@ -66,12 +66,16 @@ class _EnableNotificationsScreenState extends State<EnableNotificationsScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 24.w, top: 8.h),
+              padding: EdgeInsets.only(
+                left: 24.w,
+                right: 24.w,
+                top: 8.h,
+              ),
               child: Text(
                 'Receive notifications about your orders, latest\noffers, products availability and much more.',
                 style: AppTextStyle.regular(
                   color: const Color(0xFF999999),
-                  fontSize: 14.sp,
+                  fontSize: 13.sp,
                 ),
               ),
             ),
