@@ -103,6 +103,7 @@ class _EnableNotificationsScreenState extends State<EnableNotificationsScreen> {
                     height: 12.h,
                     child: Switch.adaptive(
                       activeColor: AppColors.primaryColor,
+                      inactiveTrackColor: const Color(0xFFF1F0F3),
                       value: value,
                       onChanged: (val) {
                         setState(() {
