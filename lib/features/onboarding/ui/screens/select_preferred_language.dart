@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shoppa/features/onboarding/ui/screens/onboarding.dart';
 import 'package:shoppa/style/text_styles.dart';
 
 import '../../../../style/color.dart';
@@ -50,7 +51,14 @@ class _SelectPreferredLanguageScreenState
             languageWidget('Français', 'assets/french.svg', 1),
             SizedBox(height: size.height * 0.4),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const OnboardingScreen(),
+                  ),
+                );
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppColors.primaryColor,
                 fixedSize: Size(double.infinity, 56.h),

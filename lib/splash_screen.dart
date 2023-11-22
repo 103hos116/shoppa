@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shoppa/features/onboarding/ui/screens/select_preferred_language.dart';
 
 import '../../style/color.dart';
-import 'features/onboarding/ui/screens/onboarding.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
     await Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => const OnboardingScreen(),
+        builder: (context) => const SelectPreferredLanguageScreen(),
       ),
     );
   }

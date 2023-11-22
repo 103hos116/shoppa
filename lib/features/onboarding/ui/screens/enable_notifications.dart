@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shoppa/features/onboarding/ui/screens/select_preferred_language.dart';
 import 'package:shoppa/style/text_styles.dart';
 
 import '../../../../style/color.dart';
@@ -113,15 +112,7 @@ class _EnableNotificationsScreenState extends State<EnableNotificationsScreen> {
             Padding(
               padding: EdgeInsets.only(left: 24.w, right: 24.w),
               child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          const SelectPreferredLanguageScreen(),
-                    ),
-                  );
-                },
+                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.primaryColor,
                   fixedSize: Size(double.infinity, 56.h),
