@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         designSize: const Size(375, 812),
         minTextAdapt: true,
         splitScreenMode: false,
-        builder: (context, shild) {
+        builder: (context, child) {
           return MaterialApp(
             title: 'Shoppa',
             debugShowCheckedModeBanner: false,
