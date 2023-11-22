@@ -30,7 +30,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(height: 20.h),
+              SizedBox(height: 40.h),
               InkWell(
                 onTap: () {
                   // _pageController.animateToPage(

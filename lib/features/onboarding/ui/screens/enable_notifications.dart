@@ -21,15 +21,17 @@ class _EnableNotificationsScreenState extends State<EnableNotificationsScreen> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       body: SingleChildScrollView(
-        padding: EdgeInsets.only(bottom: 40.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-              height: size.height * 0.458,
+              height: size.height * 0.5,
               width: double.infinity,
               decoration: const BoxDecoration(
-                color: Color(0xFFFC6371),
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage('assets/enable.png'),
+                ),
               ),
               child: Stack(
                 children: [
@@ -37,10 +39,10 @@ class _EnableNotificationsScreenState extends State<EnableNotificationsScreen> {
                     'assets/enable_notifications.png',
                     width: double.infinity,
                     height: double.infinity,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.fill,
                   ),
                   Positioned(
-                    bottom: 300.h,
+                    bottom: 320.h,
                     right: 24.w,
                     child: Text(
                       'Skip',
@@ -54,7 +56,7 @@ class _EnableNotificationsScreenState extends State<EnableNotificationsScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 32.w, top: 22.h),
+              padding: EdgeInsets.only(left: 24.w, top: 22.h),
               child: Text(
                 'Notify latest offers & product\navailability',
                 style: AppTextStyle.medium(
@@ -64,7 +66,7 @@ class _EnableNotificationsScreenState extends State<EnableNotificationsScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 32.w, top: 8.h),
+              padding: EdgeInsets.only(left: 24.w, top: 8.h),
               child: Text(
                 'Receive notifications about your orders, latest\noffers, products availability and much more.',
                 style: AppTextStyle.regular(
